@@ -13,7 +13,6 @@ Pokemon = {
 const Trainers = {
   name: "Julia",
   pokemon: ["Pikachu", "Starlord", "Dusk"],
-  name
 
 }
 
