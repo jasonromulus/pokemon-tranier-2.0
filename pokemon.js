@@ -1,28 +1,52 @@
-const pokemon = require('express').Router();
+const express = require('express');
+const app = express();
 
 
-Pokemon = {
-  name: "Pikachu",
-  color: "Yellow",
-  id: Math.random(),
-  name: "Charizard",
-  color: "Red",
-  id: Math.random()
+
+const Trainers = [
+  {
+    "name": "Julia",
+    "pokemon": ["Pikachu", "Starlord", "Dusk"],
+  },
+  {
+    "name": "William",
+    "pokemon": ["Volt", "Her"]
+  }
+
+]
+
+const PokemonObj = [
+  {
+    "name": "Pikachu",
+    "color": "Yellow",
+    "id": "1",
+  },
+  {
+    "name": "Charizard",
+    "color": "Red",
+    "id": "2"
+  }
+]
+
+
+
+const All = {
+  Trainers,
+  PokemonObj
 }
 
-const Trainers = {
-  name: "Julia",
-  pokemon: ["Pikachu", "Starlord", "Dusk"],
 
-}
 
-pokemon.get('/', (req, res, next) => {
-  res.send(Pokemon)
-  res.send(Trainers)
+app.get('/', (req, res) => {
+  res.json(All)
 })
 
-pokemon.get('/trainers', (req, res, next) => {
-  res.send(Trainers)
+
+app.get('/trainers', (req, res) => {
+  res.json(Trainers)
 })
 
-console.log(Trainers)
+
+app.listen(3000, (req, res) => {
+  console.log('app listening on 3000')
+})
