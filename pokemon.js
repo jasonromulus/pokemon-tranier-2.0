@@ -2,26 +2,24 @@ const pokemon = require('express').Router();
 
 
 Pokemon = {
-  "Pikachu": {
-    name: "Pikachu",
-    color: "Yellow",
-    id: Math.random()
-  },
-  "Charizard": {
-    name: "Charizard",
-    color: "Red",
-    id: Math.random()
-  }
+  name: "Pikachu",
+  color: "Yellow",
+  id: Math.random(),
+  name: "Charizard",
+  color: "Red",
+  id: Math.random()
 }
 
 const Trainers = {
   name: "Julia",
   pokemon: ["Pikachu", "Starlord", "Dusk"],
+  name
 
 }
 
 pokemon.get('/', (req, res, next) => {
   res.send(Pokemon)
+  res.send(Trainers)
 })
 
 pokemon.get('/trainers', (req, res, next) => {
